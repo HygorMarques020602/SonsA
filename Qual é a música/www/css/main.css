@@ -1,0 +1,249 @@
+body{
+background color: #f7f1e3;
+font-family:  "Lucida Grande";
+}
+
+/* Tela Inicial */
+.intr{
+	font-family:  "Impact";
+}
+
+.intr h2{
+	font-family:  "Impact";
+	font-size: 3em;
+	margin-left: 7vw;
+	margin-top: 10vh;
+	margin-bottom: 5vh;
+	color: #00b894;
+}
+.intr div{
+	font-size: 0.4em;
+	color:black;
+}
+
+.intr div{
+	text-align: justify;
+}
+.intr div ul{
+	font-size: 4em;
+	margin-left: 12.1vw;
+	margin-right: 9vw;
+}
+.intr div li{
+	line-height: 7vh;
+	list-style: decimal;
+}
+
+.intr button{
+	font-family:  "Impact";
+	margin-left: 25.5vw;
+	margin-top: 5vh;
+	background: #218c74;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	text-align: center;
+	font-size: 3.5em;
+	padding: 2vh 4vw;
+}
+
+/* Nivel 1 */
+.time {
+	display: none;
+	margin: 5vh 10vw;
+	width: 80vw;
+	height: 15vh;
+	background: #218c74;
+	border: none;
+	border-radius: 5px;
+	}
+
+.time h1{
+	padding: 2vh 0 0 0;
+	font-size: 4em;
+	color: white;
+	text-align: center;
+	font-family: "Impact";
+}
+
+.time h2{
+	margin-top: 5vh;
+	color: black;
+	text-align: center;
+	font-family: "Impact";
+	font-size: 2em;
+}
+
+.time>img{
+	width: 20vw;
+	height: 20vw;
+	margin: 2.5vh 15vh 2.5vh 22vh;
+}
+
+.time ul{
+	display: flex;
+	flex-wrap: wrap;
+	background: #218c74;
+	border-radius: 5px;
+}
+
+.time li img{
+	width: 20vw;
+	height: 20vw;
+	padding: 2vh 0 2vh 5vw;
+}
+
+/* Nivel 2 */
+.time2 {
+	display: none;
+	margin: 5vh 10vw;
+	width: 80vw;
+	height: 15vh;
+	background: #218c74;
+	border: none;
+	border-radius: 5px;
+	}
+
+.time2 h1{
+	padding: 2vh 0 0 0;
+	font-size: 4em;
+	color: white;
+	text-align: center;
+	font-family: "Impact";
+}
+
+.time2 h2{
+	margin-top: 5vh;
+	color: black;
+	text-align: center;
+	font-family: "Impact";
+	font-size: 2em;
+}
+
+.time2>img{
+	width: 20vw;
+	height: 20vw;
+	margin: 2.5vh 15vh 2.5vh 22vh;
+}
+
+.time2 ul{
+	display: flex;
+	flex-wrap: wrap;
+	background: #218c74;
+	border-radius: 5px;
+}
+
+.time2 li img{
+	width: 20vw;
+	height: 20vw;
+	padding: 2vh 0 2vh 5vw;
+}
+
+/* Nivel 3 */
+.time3 {
+	display: none;
+	margin: 5vh 10vw;
+	width: 80vw;
+	height: 15vh;
+	background: #218c74;
+	border: none;
+	border-radius: 5px;
+	}
+
+.time3 h1{
+	padding: 2vh 0 0 0;
+	font-size: 4em;
+	color: white;
+	text-align: center;
+	font-family: "Impact";
+}
+
+.time3 h2{
+	margin-top: 5vh;
+	color: black;
+	text-align: center;
+	font-family: "Impact";
+	font-size: 2em;
+}
+
+.time3>img{
+	width: 20vw;
+	height: 20vw;
+	margin: 2.5vh 15vh 2.5vh 22vh;
+}
+
+.time3 ul{
+	display: flex;
+	flex-wrap: wrap;
+	background: #218c74;
+	border-radius: 5px;
+}
+
+.time3 li img{
+	width: 20vw;
+	height: 20vw;
+	padding: 2vh 0 2vh 5vw;
+}
+
+/* Tela Ganhou */
+.ganhou{
+	text-align: center;
+	display: none;
+}
+
+.ganhou p{
+	font-weight: bold;
+	font-size: 3em;
+	margin-left: 20vw;
+	margin-top: 40vh;
+	margin-bottom: 20vh;
+	font-family:  "Impact";
+	color: #00b894;
+}
+
+.ganhou a{
+	font-family:  "Impact";
+	text-decoration: none;
+	color: white;
+	font-size: 2em;
+	margin-left: 20vw;
+	background:#218c74;
+	padding: 5vh 5vw;
+	border-radius: 5px;
+}
+
+/* Tela Perdeu */
+.perdeu{
+	display: none;
+}
+
+.perdeu p{
+	font-weight: bold;
+	font-size: 3em;
+	margin-left: 15vw;
+	margin-top: 40vh;
+	margin-bottom: 30vh;
+	font-family:  "Impact";
+	color: #00b894;
+}
+
+.perdeu a{
+	font-family:  "Impact";
+	text-decoration: none;
+	color: white;
+	font-size: 2em;
+	margin-left: 15vw;
+	background:#218c74;
+	padding: 5vh 5vw;
+	border-radius: 5px;
+}
+
+/* Ajustar Tela */
+section{
+	position: absolute;
+	top: 0;
+}
+body{
+	position: relative;
+
+}

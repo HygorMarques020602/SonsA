@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Qual a música</title>
+</head>
+<body>
+
+  <section class="intr">
+    <h2>QUEM CANTA?</h2>
+    <div>
+      <ul>
+        <li>Você devera tocar no icone de som e prestar atenção a música;</li>
+        <li>Em seguida deve clicar na opção na qual você considera que seja mais correta;</li>
+        <li> Preste atenção ao tempo.</li>
+      </ul>
+    </div>
+    <button type="button" name="button">INICIAR </button>
+  </section>
+
+  <section class="time">
+    <h1><span class="minuto">00</span>:<span class="segundo">30</span></h1>
+  <h2>QUEM CANTA ESSA MÚSICA ?</h2>
+    <img class="som" src="img/iconsom.png">
+    <ul>
+      <li><img src="img/nivel1/xm.png" data-som = "midias/nivel1/xm.mp3"></li>
+      <li><img src="img/nivel1/pw.png"></li>
+      <li><img src="img/nivel1/or.png"></li>
+      <li><img src="img/nivel1/ll.png"></li>
+      <li><img src="img/nivel1/dg.png"></li>
+      <li><img src="img/nivel1/bk.png"></li>
+       </ul>
+</section>
+
+<section class="time2">
+  <h1><span class="minuto">00</span>:<span class="segundo">30</span></h1>
+  <h2>QUEM CANTA ESSA MÚSICA ?</h2>
+  <img class="som" src="img/iconsom.png">
+  <ul>
+    <li><img src="img/nivel2/bg.png"></li>
+    <li><img src="img/nivel2/cb.png"></li>
+    <li><img src="img/nivel2/cg.png" data-som = "midias/nivel2/cg.mp3"></li>
+    <li><img src="img/nivel2/tf.png"></li>
+    <li><img src="img/nivel2/mn.png"></li>
+    <li><img src="img/nivel2/dj.png" data-som = "midias/nivel2/dj.mp3"></li>
+  </ul>
+</section>
+
+<section class="time3">
+  <h1><span class="minuto">00</span>:<span class="segundo">30</span></h1>
+  <h2>QUEM CANTA ESSA MÚSICA ?</h2>
+  <img class="som" src="img/iconsom.png">
+  <ul>
+    <li><img src="img/nivel3/be.png" data-som = "midias/nivel3/be.mp3"></li>
+    <li><img src="img/nivel3/dk.png"></li>
+    <li><img src="img/nivel3/lr.png" data-som = "midias/nivel3/lr.mp3"></li>
+    <li><img src="img/nivel3/ri.png"></li>
+    <li><img src="img/nivel3/sg.png"></li>
+    <li><img src="img/nivel3/tw.png" data-som = "midias/nivel3/tw.mp3"></li>
+  </ul>
+</section>
+
+<section class="ganhou">
+  <p>GANHOUU!!!!</p>
+  <a href="index.html">RECOMEÇAR</a>
+</section>
+
+<section class="perdeu">
+  <p>PERDEUUU!!!!!!</p>
+  <a href="index.html">TENTAR NOVAMENTE</a>
+</section>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+
+secAtual = $(".time");
+
+function gerarContador(elemento){
+  return setInterval(function(){
+    var tempo = $(elemento).text();
+    tempo = parseInt(tempo) -1;
+    $(elemento).text(tempo);
+    if(tempo == 0){
+      audio1.pause();
+      audio2.pause();
+      audio3.pause();
+      audio4.pause();
+      audio5.pause();
+      audio6.pause();
+      clearInterval(contagem);
+      secAtual.fadeOut();
+      $(".perdeu").fadeIn();
+    }
+  }, 1000);
+
+}
+
+$(".intr button").on("click", function(){
+  $("section.intr").fadeOut();
+  $("section.time").fadeIn();
+});
+
+   // // Musicas Definidas
+   var musica1 = "midias/nivel1/xm.mp3";
+   var musica2 = "midias/nivel2/cg.mp3";
+   var musica3 = "midias/nivel2/dj.mp3";
+   var musica4 = "midias/nivel3/be.mp3";
+   var musica5 = "midias/nivel3/lr.mp3";
+   var musica6 = "midias/nivel3/tw.mp3";
+
+   // // Definição dos audios
+   var audio1 = new Audio (musica1);
+   var audio2 = new Audio (musica2);
+   var audio3 = new Audio (musica3);
+   var audio4 = new Audio (musica4);
+   var audio5 = new Audio (musica5);
+   var audio6 = new Audio (musica6);
+
+   // Nivel 1
+   $(".time .som").on("click", function(){
+    audio1.play();
+    contagem = gerarContador(".time h1 .segundo")
+   })
+
+   $(".time ul li img").on("click", function(){
+   var audioEscolha = $(this).data("som");
+   if(audioEscolha == musica1){
+    audio1.pause();
+    $(".time").fadeOut();
+    $(".time2").fadeIn();
+    secAtual = $(".time2");
+    clearInterval(contagem);
+   }
+
+   // Nivel 2
+   $(".time2 .som").on("click", function(){
+     audio2.play();
+     audio3.play();
+
+     acerto = 0;
+     acerto2 = 0;
+     contagem = gerarContador(".time2 h1 .segundo");
+   })
+
+   $(".time2 ul li img").on("click", function(){
+     var audioEscolha = $(this).data("som");
+     if(audioEscolha == musica2){
+       acerto++;
+       audio2.pause();
+     }
+
+     if(audioEscolha == musica3){
+       acerto2++;
+       audio3.pause();
+     }
+     if((acerto==1) && (acerto2==1)){
+       $(".time2").fadeOut();
+       $(".time3").fadeIn();
+       secAtual = $(".time3");
+       clearInterval(contagem);
+     }
+   });
+
+   // Nivel 3
+   $(".time3 .som").on("click", function(){
+     audio4.play();
+     audio5.play();
+     audio6.play();
+
+     acerto = 0;
+     acerto2 = 0;
+     acerto3 = 0;
+     contagem = gerarContador(".time3 h1 .segundo")
+     })
+
+     $(".time3 ul li img").on("click", function(){
+       var audioEscolha = $(this).data("som");
+       if(audioEscolha == musica4){
+         acerto++;
+         audio4.pause();
+       }
+
+       if(audioEscolha == musica5){
+         acerto2++;
+         audio5.pause();
+       }
+
+       if(audioEscolha == musica6){
+         acerto3++;
+         audio6.pause();
+       }
+       if((acerto==1) && (acerto2==1) && (acerto3==1)){
+         $(".time3").fadeOut();
+         $(".ganhou").fadeIn();
+         clearInterval(contagem);
+       }
+     });
+});
+
+</script>
+</body>
+</html>
